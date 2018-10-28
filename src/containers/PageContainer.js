@@ -11,7 +11,8 @@ const PageContainer = (props) => {
 
 const mapStateToProps = store => {
 	return {
-		page: store.page
+		page: store.page,
+		isAuthorized: store.user.isAuthorized
 	}
 }
 

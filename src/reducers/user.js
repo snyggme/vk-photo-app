@@ -3,7 +3,8 @@ import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL } from '../actions/UserAction'
 const initialState = {
 	name: '',
 	error: '',
-	isFetching: false
+	isFetching: false,
+	isAuthorized: false
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -18,13 +19,15 @@ export const userReducer = (state = initialState, action) => {
 			return {
 				...state,
 				isFetching: false,
-				name: action.payload
+				name: action.payload,
+				isAuthorized: true
 			};
 		case LOGIN_FAIL: 
 			return {
 				...state,
 				isFetching: false,
-				error: action.payload.message
+				error: action.payload.message,
+				isAuthorized: false
 			};
 		default:
 			return state;

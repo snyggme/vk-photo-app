@@ -5,12 +5,14 @@ export class Page extends Component {
 	constructor(props) {
 		super(props);
 
-		this.handelClick = this.handelClick.bind(this);
+		this.years = [2018, 2017, 2016, 2015, 2014, 2013, 2012];
+
+		this.handleClick = this.handleClick.bind(this);
 	}
 	componentDidMount() {
-		this.props.getPhotos(2018);
+		this.props.getPhotos(this.years[0]);
 	}
-	handelClick(e) {
+	handleClick(e) {
 		const year = +e.currentTarget.innerText;
 		this.props.getPhotos(year);
 	}
@@ -32,21 +34,30 @@ export class Page extends Component {
 		}
 	}
 	render() {
-		const { year, photos, isFetching } = this.props.page;
+		const { year, photos } = this.props.page;
+		const isAuthorized = this.props.isAuthorized;
 
 		return(
 			<div className='ib page'>
 				<p>
-					<button className='btn' onClick={this.handelClick}>2018</button>
-					<button className='btn' onClick={this.handelClick}>2017</button>
-					<button className='btn' onClick={this.handelClick}>2016</button>
-					<button className='btn' onClick={this.handelClick}>2015</button>
-					<button className='btn' onClick={this.handelClick}>2014</button>
-					<button className='btn' onClick={this.handelClick}>2013</button>
-					<button className='btn' onClick={this.handelClick}>2012</button>
+					{this.years.map((year, index) => 
+						<button 
+							className='btn'
+							onClick={this.handleClick}
+							key={index}>
+							{year}
+						</button>
+					)}
 				</p>
-				<p>{year} year [{photos.length}]</p>
-				{this.renderTemplate()}
+				{ isAuthorized 
+					? (
+						<div>
+							<p>{year} year [{photos.length}]</p>
+							{this.renderTemplate()}
+						</div>
+					)
+					: <p>You need to be authorized to view photos</p>
+				}
 			</div>
 		)
 	}
