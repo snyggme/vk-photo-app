@@ -6,8 +6,8 @@ class App extends Component {
     render() {
         return (
             <div className="app">
+            	<UserContainer {...this.props} />
                 <PageContainer {...this.props} />
-                <UserContainer {...this.props} />
             </div>
         );
     }

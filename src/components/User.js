@@ -14,20 +14,32 @@ export class User extends Component {
 		}
 
 		if (isFetching) {
-			return <p>Загружаю...</p>
+			return <div style={{
+				justifySelf: 'flex-end',
+				width: '200px',
+				color: 'white',
+				marginRight: '100px'
+			}}>
+				Загружаю...
+			</div>
 		}
 		
 		if (name) {
-			return <p>Привет, {name}!</p>
+			return <div className='logged'>Привет, {name}!</div>
 		} else {
 			return (
-				<button className="btn" onClick={this.props.handleLogin}>
-					Войти
+				<button className="btn btn-login" onClick={this.props.handleLogin}>
+					Login
 				</button>
 			)
 		}
 	}
 	render() {
-		return <div className="ib user">{this.renderTemplate()}</div>
+		return (
+			<header className="user">
+				<h2>Top Photo App</h2>
+				{this.renderTemplate()}
+			</header>
+		)
 	}
 }

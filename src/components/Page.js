@@ -28,7 +28,7 @@ export class Page extends Component {
 		}
 
 		if (photos.length === 0) {
-			return <p>You have 0 photos this year :(</p>
+			return <p style={{textAlign: 'center'}}>You don't have any photo this year 😔</p>
 		} else {
 			return <PhotoGrid photos={photos} />
 		}
@@ -38,8 +38,8 @@ export class Page extends Component {
 		const isAuthorized = this.props.isAuthorized;
 
 		return(
-			<div className='ib page'>
-				<p>
+			<div className='page'>
+				<div className='year-btns'>
 					{this.years.map((year, index) => 
 						<button 
 							className='btn'
@@ -48,15 +48,15 @@ export class Page extends Component {
 							{year}
 						</button>
 					)}
-				</p>
+				</div>
 				{ isAuthorized 
 					? (
 						<div>
-							<p>{year} year [{photos.length}]</p>
+							<div style={{textAlign: 'center'}}>{year} year [{photos.length}]</div>
 							{this.renderTemplate()}
 						</div>
 					)
-					: <p>You need to be authorized to view photos</p>
+					: <div style={{textAlign: 'center', marginTop: '40px'}}>You need to be authorized 🎃 to view photos.</div>
 				}
 			</div>
 		)
