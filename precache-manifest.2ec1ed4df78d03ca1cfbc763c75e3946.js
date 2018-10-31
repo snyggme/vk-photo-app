@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/vk-photo-app/static/css/main.8d079709.chunk.css"
   },
   {
-    "revision": "f43dc5f5de1dffed8baa5e4052c01a4b",
+    "revision": "de58d900238715839c1ae4dd2b863126",
     "url": "/vk-photo-app/index.html"
   }
 ];
