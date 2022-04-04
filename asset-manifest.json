@@ -1,13 +1,13 @@
 {
-  "main.css": "/vk-photo-app/static/css/main.8d079709.chunk.css",
-  "main.js": "/vk-photo-app/static/js/main.f96e8529.chunk.js",
-  "main.js.map": "/vk-photo-app/static/js/main.f96e8529.chunk.js.map",
-  "static/js/1.82de3cd6.chunk.js": "/vk-photo-app/static/js/1.82de3cd6.chunk.js",
-  "static/js/1.82de3cd6.chunk.js.map": "/vk-photo-app/static/js/1.82de3cd6.chunk.js.map",
-  "runtime~main.js": "/vk-photo-app/static/js/runtime~main.0f29c8e2.js",
-  "runtime~main.js.map": "/vk-photo-app/static/js/runtime~main.0f29c8e2.js.map",
-  "static/css/main.8d079709.chunk.css.map": "/vk-photo-app/static/css/main.8d079709.chunk.css.map",
-  "index.html": "/vk-photo-app/index.html",
-  "precache-manifest.2ec1ed4df78d03ca1cfbc763c75e3946.js": "/vk-photo-app/precache-manifest.2ec1ed4df78d03ca1cfbc763c75e3946.js",
-  "service-worker.js": "/vk-photo-app/service-worker.js"
+  "files": {
+    "main.css": "/vk-photo-app/static/css/main.f6646192.css",
+    "main.js": "/vk-photo-app/static/js/main.d3f51c1b.js",
+    "index.html": "/vk-photo-app/index.html",
+    "main.f6646192.css.map": "/vk-photo-app/static/css/main.f6646192.css.map",
+    "main.d3f51c1b.js.map": "/vk-photo-app/static/js/main.d3f51c1b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6646192.css",
+    "static/js/main.d3f51c1b.js"
+  ]
 }
