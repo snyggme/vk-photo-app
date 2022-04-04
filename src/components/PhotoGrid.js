@@ -1,9 +1,9 @@
 import React from 'react';
 
-const PhotoGrid = (props) => {
+const PhotoGrid = ({ photos }) => {
 	return (
 		<div className='photo-grid'>
-			{props.photos.map(photo => {
+			{photos.map(photo => {
 				let widthIndex = 3;
 
 				for (let i = 0; i < photo.sizes.length; i++) {

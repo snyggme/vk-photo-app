@@ -5,17 +5,18 @@ export class Page extends Component {
 	constructor(props) {
 		super(props);
 
-		this.years = [2018, 2017, 2016, 2015, 2014, 2013, 2012];
-
-		this.handleClick = this.handleClick.bind(this);
+		this.years = [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012];
 	}
+
 	componentDidMount() {
 		this.props.getPhotos(this.years[0]);
 	}
-	handleClick(e) {
+
+	handleClick = (e) => {
 		const year = +e.currentTarget.innerText;
 		this.props.getPhotos(year);
 	}
+
 	renderTemplate() {
 		const { photos, error, isFetching } = this.props.page;
 
@@ -33,9 +34,9 @@ export class Page extends Component {
 			return <PhotoGrid photos={photos} />
 		}
 	}
+
 	render() {
-		const { year, photos } = this.props.page;
-		const isAuthorized = this.props.isAuthorized;
+		const { page: { year, photos }, isAuthorized } = this.props;
 
 		return(
 			<div className='page'>
